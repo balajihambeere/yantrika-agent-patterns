@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/*
+ * Same design tokens as every project's own frontend (see e.g.
+ * 01-agentic-loop/frontend/app/globals.css) — this site is the front door
+ * to all six, so it uses the identical palette rather than inventing a
+ * seventh one.
+ *
+ * Accessibility: every text/background pair here is verified at WCAG AA
+ * (>=4.5:1 for normal text). The light-mode accent is intentionally
+ * darker than the dark-mode one (#a24f25 vs #e08a4b) purely to clear
+ * that bar on the light cream background — on-accent text (buttons with
+ * a solid accent fill) uses --color-on-accent rather than a hardcoded
+ * white, because white-on-accent fails badly in dark mode (the light
+ * accent orange is for *text*, not for full-opacity button fills).
+ */
+:root {
+  --color-bg: #f7f5ee;
+  --color-ink: #1f2d3d;
+  --color-soft: #5a6b7a;
+  --color-panel: #ffffff;
+  --color-border: #c9c2a8;
+
+  --color-accent: #a24f25;
+  --color-on-accent: #ffffff;
+  --color-safe: #2f4a3a;
+  --color-danger: #b8372e;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #121826;
+    --color-ink: #e9e4d6;
+    --color-soft: #a9b7c4;
+    --color-panel: #1a2234;
+    --color-border: #33415a;
+
+    --color-accent: #e08a4b;
+    --color-on-accent: #1f2d3d;
+    --color-safe: #6fae8c;
+    --color-danger: #e0665c;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-ink: var(--color-ink);
+  --color-soft: var(--color-soft);
+  --color-panel: var(--color-panel);
+  --color-border: var(--color-border);
+  --color-accent: var(--color-accent);
+  --color-on-accent: var(--color-on-accent);
+  --color-safe: var(--color-safe);
+  --color-danger: var(--color-danger);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+
+/* Subtle grain/texture-free flat background; a thin top accent line gives
+   each project section a quiet sense of progression without needing
+   heavier dividers. */
+.project-section {
+  border-top: 1px solid var(--color-border);
+}
+
+video {
+  background: var(--color-bg);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}

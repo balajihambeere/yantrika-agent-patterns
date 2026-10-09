@@ -1,0 +1,21 @@
+{
+  "sku": "4200-series-harness",
+  "batch_report_balance": 340,
+  "overnight_events": [
+    {
+      "minutes_after_start": 70,
+      "delta": -150,
+      "note": "Line 1 night shift pulls an urgent order forward"
+    },
+    {
+      "minutes_after_start": 160,
+      "delta": -90,
+      "note": "quality hold released, miscredited into available stock"
+    },
+    {
+      "minutes_after_start": 455,
+      "delta": -88,
+      "note": "Line 2 morning shift starts 30 minutes early"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="660" viewBox="0 0 1240 660" role="img" aria-label="Architecture diagram of the agentic loop: START flows into Observe, which either ends the run or passes to Decide. Decide routes low and medium risk decisions straight to Act, and high-risk decisions through a Human Review interrupt before Act. Act always loops back to Observe.">
+<title>Agentic Loop — Architecture</title>
+<desc>A LangGraph StateGraph with four nodes — Observe, Decide, Human Review, Act — wired as a loop: Observe to Decide to Act to Observe again, with Decide conditionally routing high-risk cases through a real interrupt() at Human Review before Act, and Observe routing to END when there is nothing left to observe.</desc>
+<defs>
+  <style>
+    .bg { fill: #f7f5ee; }
+    .panel { fill: #ffffff; }
+    .line { stroke: #c9c2a8; }
+    .ink { fill: #1f2d3d; }
+    .soft { fill: #5a6b7a; }
+    .faint { fill: #6b7786; }
+    .node-fill { fill: #eaf3ec; }
+    .node-stroke { stroke: #2f4a3a; }
+    .human-fill { fill: #fbe9dd; }
+    .human-stroke { stroke: #b85c2e; }
+    .end-fill { fill: #ece7f6; }
+    .end-stroke { stroke: #6f5a9e; }
+    .edge { fill: none; stroke: #5a6b7a; stroke-width: 2; }
+    .edge-strong { fill: none; stroke: #b85c2e; stroke-width: 2; stroke-dasharray: 7 5; }
+    .edge-label { font-size: 16px; fill: #475463; font-family: 'IBM Plex Mono','Courier New',monospace; }
+    .edge-label-strong { font-size: 16px; fill: #9c4d26; font-family: 'IBM Plex Mono','Courier New',monospace; }
+    .marker-fill { fill: #5a6b7a; }
+    .marker-fill-strong { fill: #b85c2e; }
+
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #121826; }
+      .panel { fill: #1a2234; }
+      .line { stroke: #33415a; }
+      .ink { fill: #e9e4d6; }
+      .soft { fill: #a9b7c4; }
+      .faint { fill: #93a2b2; }
+      .node-fill { fill: #1c3327; }
+      .node-stroke { stroke: #6fae8c; }
+      .human-fill { fill: #3a2718; }
+      .human-stroke { stroke: #e08a4b; }
+      .end-fill { fill: #2a2340; }
+      .end-stroke { stroke: #a996e0; }
+      .edge { stroke: #a9b7c4; }
+      .edge-strong { stroke: #e08a4b; }
+      .edge-label { fill: #c3cedb; }
+      .edge-label-strong { fill: #e8a877; }
+      .marker-fill { fill: #a9b7c4; }
+      .marker-fill-strong { fill: #e08a4b; }
+    }
+
+    svg { font-family: 'IBM Plex Sans','Helvetica Neue',Arial,sans-serif; }
+    .mono { font-family: 'IBM Plex Mono','Courier New',monospace; }
+    .title { font-weight: 700; }
+    .node rect { stroke-width: 2; }
+    .node text { text-anchor: middle; dominant-baseline: middle; }
+  </style>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path class="marker-fill" d="M0,0 L10,5 L0,10 z"/>
+  </marker>
+  <marker id="arrow-strong" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path class="marker-fill-strong" d="M0,0 L10,5 L0,10 z"/>
+  </marker>
+</defs>
+
+<rect class="bg" x="0" y="0" width="1240" height="660"/>
+
+<text x="30" y="36" class="title ink" font-size="24">Agentic Loop — Architecture</text>
+<text x="30" y="60" class="mono soft" font-size="16">START → observe → decide → (human_review) → act → observe …</text>
+<line class="line" x1="30" y1="74" x2="1210" y2="74" stroke-width="1"/>
+
+<!-- loop-back arc: act -> observe, routed above the main row, below the header -->
+<path class="edge" d="M1095,160 C1095,108 295,108 295,160" marker-end="url(#arrow)"/>
+<text x="695" y="104" class="edge-label" text-anchor="middle">back to the top of the loop</text>
+
+<!-- START marker -->
+<circle cx="100" cy="205" r="30" class="panel" stroke="#8b93a0" stroke-width="2"/>
+<text x="100" y="205" class="mono ink" font-size="16" text-anchor="middle" dominant-baseline="middle">START</text>
+
+<!-- observe node -->
+<g class="node">
+  <rect x="190" y="160" width="210" height="90" rx="12" class="node-fill node-stroke"/>
+  <text x="295" y="193" class="ink" font-size="20" font-weight="600">observe</text>
+  <text x="295" y="221" class="mono faint" font-size="16">pull next event</text>
+</g>
+
+<!-- decide node -->
+<g class="node">
+  <rect x="590" y="160" width="210" height="90" rx="12" class="node-fill node-stroke"/>
+  <text x="695" y="193" class="ink" font-size="20" font-weight="600">decide</text>
+  <text x="695" y="221" class="mono faint" font-size="16">rule-based</text>
+</g>
+
+<!-- act node -->
+<g class="node">
+  <rect x="990" y="160" width="210" height="90" rx="12" class="node-fill node-stroke"/>
+  <text x="1095" y="193" class="ink" font-size="20" font-weight="600">act</text>
+  <text x="1095" y="221" class="mono faint" font-size="16">execute + log</text>
+</g>
+
+<!-- END node: branches down from observe -->
+<g class="node">
+  <rect x="190" y="360" width="210" height="80" rx="12" class="end-fill end-stroke"/>
+  <text x="295" y="392" class="ink" font-size="18" font-weight="600">END</text>
+  <text x="295" y="418" class="mono faint" font-size="16">nothing left to see</text>
+</g>
+
+<!-- human_review node: branches down from decide -->
+<g class="node">
+  <rect x="590" y="360" width="210" height="112" rx="12" class="human-fill human-stroke" stroke-dasharray="4 4"/>
+  <text x="695" y="391" class="ink" font-size="19" font-weight="600">human_review</text>
+  <text x="695" y="417" class="mono faint" font-size="16">interrupt()</text>
+  <text x="695" y="441" class="mono faint" font-size="16">pauses for real</text>
+</g>
+
+<!-- edges -->
+<!-- START -> observe -->
+<path class="edge" d="M130,205 L190,205" marker-end="url(#arrow)"/>
+
+<!-- observe -> decide -->
+<path class="edge" d="M400,205 L590,205" marker-end="url(#arrow)"/>
+<text x="495" y="195" class="edge-label" text-anchor="middle">has observation</text>
+
+<!-- observe -> END -->
+<path class="edge" d="M295,250 L295,360" marker-end="url(#arrow)"/>
+<text x="315" y="310" class="edge-label" text-anchor="start">nothing to observe</text>
+
+<!-- decide -> act (low/medium risk) -->
+<path class="edge" d="M800,205 L990,205" marker-end="url(#arrow)"/>
+<text x="895" y="195" class="edge-label" text-anchor="middle">low / medium risk</text>
+
+<!-- decide -> human_review (high risk) -->
+<path class="edge-strong" d="M695,250 L695,360" marker-end="url(#arrow-strong)"/>
+<text x="715" y="310" class="edge-label-strong" text-anchor="start">high risk</text>
+
+<!-- human_review -> act -->
+<path class="edge" d="M800,410 C900,410 1000,330 1095,250" marker-end="url(#arrow)"/>
+<text x="975" y="353" class="edge-label" text-anchor="middle">approved / declined</text>
+
+<!-- legend -->
+<g>
+  <rect x="30" y="500" width="1180" height="130" rx="10" class="panel line" stroke-width="1"/>
+  <text x="54" y="534" class="mono soft" font-size="16" font-weight="600">GraphState</text>
+  <text x="54" y="562" font-size="16" class="faint mono">sku · run_rate_per_minute · balance · pending_events · alerted · observation · decision · log</text>
+  <circle cx="60" cy="596" r="6" class="human-stroke" fill="#b85c2e"/>
+  <text x="80" y="601" font-size="16" class="soft">dashed border = a node that genuinely pauses the graph via <tspan class="mono">interrupt()</tspan></text>
+</g>
+
+</svg>

@@ -1,0 +1,168 @@
+{
+  "products": [
+    {
+      "sku": "EH-4200",
+      "name": "Engine Wiring Harness",
+      "opening_balance": 800,
+      "run_rate_per_minute": 5,
+      "events": [
+        {"minutes_after_start": 15, "delta": -40, "note": "Line A night shift routine draw"},
+        {"minutes_after_start": 45, "delta": -35, "note": "Line A continues steady production"},
+        {"minutes_after_start": 80, "delta": 60, "note": "scheduled supplier receipt confirmed at the dock"},
+        {"minutes_after_start": 120, "delta": -50, "note": "Line A second shift draw"},
+        {"minutes_after_start": 150, "delta": -30, "note": "quality sample pulled for routine audit"},
+        {"minutes_after_start": 190, "delta": -45, "note": "Line B joins production, shared draw"},
+        {"minutes_after_start": 230, "delta": 40, "note": "partial receipt from secondary supplier"},
+        {"minutes_after_start": 270, "delta": -55, "note": "overnight batch draw, both lines running"},
+        {"minutes_after_start": 310, "delta": -30, "note": "minor rework draw"},
+        {"minutes_after_start": 350, "delta": 50, "note": "morning shift receipt"},
+        {"minutes_after_start": 390, "delta": -40, "note": "Line A morning ramp-up"},
+        {"minutes_after_start": 430, "delta": -35, "note": "Line B morning ramp-up"},
+        {"minutes_after_start": 470, "delta": -25, "note": "routine draw, shift handover"}
+      ]
+    },
+    {
+      "sku": "DH-3100",
+      "name": "Dashboard Wiring Harness",
+      "opening_balance": 300,
+      "run_rate_per_minute": 4,
+      "events": [
+        {"minutes_after_start": 10, "delta": -70, "note": "Dash sub-assembly line pulls forward for an urgent trim-level changeover"},
+        {"minutes_after_start": 35, "delta": 60, "note": "expedited partial receipt lands ahead of schedule"},
+        {"minutes_after_start": 70, "delta": -35, "note": "steady production draw"},
+        {"minutes_after_start": 100, "delta": -10, "note": "small quality sample pulled"},
+        {"minutes_after_start": 140, "delta": 45, "note": "scheduled supplier receipt arrives"},
+        {"minutes_after_start": 165, "delta": -40, "note": "Dash line draw, second shift"},
+        {"minutes_after_start": 195, "delta": -5, "note": "minor rework draw"},
+        {"minutes_after_start": 230, "delta": 50, "note": "morning receipt confirmed at dock"},
+        {"minutes_after_start": 260, "delta": -45, "note": "Dash line draw continues"},
+        {"minutes_after_start": 290, "delta": -8, "note": "small miscellaneous draw"},
+        {"minutes_after_start": 320, "delta": 40, "note": "partial receipt from secondary supplier"},
+        {"minutes_after_start": 350, "delta": -35, "note": "Dash line draw, shift handover"},
+        {"minutes_after_start": 380, "delta": -2, "note": "negligible adjustment draw"}
+      ]
+    },
+    {
+      "sku": "DRH-220L",
+      "name": "Door Wiring Harness (Left)",
+      "opening_balance": 200,
+      "run_rate_per_minute": 3,
+      "events": [
+        {"minutes_after_start": 10, "delta": -30, "note": "Door-L line pulls forward for an urgent order"},
+        {"minutes_after_start": 30, "delta": -25, "note": "Door-L line continues, second draw"},
+        {"minutes_after_start": 55, "delta": 40, "note": "partial receipt lands from local supplier"},
+        {"minutes_after_start": 85, "delta": -20, "note": "Door-L routine draw"},
+        {"minutes_after_start": 110, "delta": -15, "note": "quality hold sample pulled"},
+        {"minutes_after_start": 140, "delta": 25, "note": "small receipt, partial lot"},
+        {"minutes_after_start": 165, "delta": -10, "note": "minor rework draw"},
+        {"minutes_after_start": 200, "delta": 50, "note": "expedited receipt arrives ahead of schedule"},
+        {"minutes_after_start": 230, "delta": -40, "note": "Door-L line draw, second shift"},
+        {"minutes_after_start": 260, "delta": -20, "note": "Door-L continues drawing down"},
+        {"minutes_after_start": 290, "delta": 35, "note": "scheduled supplier receipt"},
+        {"minutes_after_start": 320, "delta": -25, "note": "Door-L routine draw"},
+        {"minutes_after_start": 350, "delta": -10, "note": "minor adjustment draw"}
+      ]
+    },
+    {
+      "sku": "DRH-220R",
+      "name": "Door Wiring Harness (Right)",
+      "opening_balance": 250,
+      "run_rate_per_minute": 3.5,
+      "events": [
+        {"minutes_after_start": 10, "delta": -45, "note": "Door-R line pulls forward alongside Door-L for the same urgent order"},
+        {"minutes_after_start": 30, "delta": -30, "note": "Door-R line continues drawing down"},
+        {"minutes_after_start": 55, "delta": -20, "note": "quality hold sample pulled"},
+        {"minutes_after_start": 85, "delta": 60, "note": "expedited receipt arrives ahead of schedule"},
+        {"minutes_after_start": 115, "delta": -35, "note": "Door-R line draw, second shift"},
+        {"minutes_after_start": 145, "delta": -15, "note": "minor rework draw"},
+        {"minutes_after_start": 175, "delta": 45, "note": "scheduled supplier receipt"},
+        {"minutes_after_start": 205, "delta": -40, "note": "Door-R line draw continues"},
+        {"minutes_after_start": 235, "delta": -10, "note": "small miscellaneous draw"},
+        {"minutes_after_start": 265, "delta": 30, "note": "partial receipt from secondary supplier"},
+        {"minutes_after_start": 295, "delta": -15, "note": "Door-R routine draw"},
+        {"minutes_after_start": 325, "delta": 55, "note": "morning shift receipt confirmed at dock"},
+        {"minutes_after_start": 355, "delta": -20, "note": "Door-R routine draw, shift handover"}
+      ]
+    },
+    {
+      "sku": "BWH-500",
+      "name": "Battery Wiring Harness",
+      "opening_balance": 600,
+      "run_rate_per_minute": 6,
+      "events": [
+        {"minutes_after_start": 15, "delta": -80, "note": "Battery line night shift draw"},
+        {"minutes_after_start": 45, "delta": -50, "note": "Battery line continues, second draw"},
+        {"minutes_after_start": 75, "delta": 20, "note": "small receipt, partial lot"},
+        {"minutes_after_start": 110, "delta": -110, "note": "Battery line pulls forward for an urgent order"},
+        {"minutes_after_start": 140, "delta": -30, "note": "quality hold sample pulled"},
+        {"minutes_after_start": 175, "delta": 70, "note": "expedited receipt arrives ahead of schedule"},
+        {"minutes_after_start": 210, "delta": -30, "note": "Battery line routine draw"},
+        {"minutes_after_start": 240, "delta": 15, "note": "small miscellaneous receipt"},
+        {"minutes_after_start": 270, "delta": -25, "note": "Battery line draw continues"},
+        {"minutes_after_start": 300, "delta": -10, "note": "minor adjustment draw"},
+        {"minutes_after_start": 330, "delta": 20, "note": "partial receipt from secondary supplier"},
+        {"minutes_after_start": 360, "delta": -15, "note": "Battery line draw, shift handover"}
+      ]
+    },
+    {
+      "sku": "CWH-750",
+      "name": "Chassis Wiring Harness",
+      "opening_balance": 400,
+      "run_rate_per_minute": 5.5,
+      "events": [
+        {"minutes_after_start": 10, "delta": -60, "note": "Chassis line pulls forward for an urgent order"},
+        {"minutes_after_start": 35, "delta": -20, "note": "Chassis line continues drawing down"},
+        {"minutes_after_start": 65, "delta": -50, "note": "quality hold miscredit discovered"},
+        {"minutes_after_start": 95, "delta": -30, "note": "Chassis line second draw"},
+        {"minutes_after_start": 125, "delta": 40, "note": "partial receipt lands from local supplier"},
+        {"minutes_after_start": 155, "delta": -45, "note": "Chassis line draw continues, second shift"},
+        {"minutes_after_start": 185, "delta": -20, "note": "minor rework draw"},
+        {"minutes_after_start": 215, "delta": 25, "note": "small receipt, partial lot"},
+        {"minutes_after_start": 245, "delta": -35, "note": "Chassis line draw, still falling"},
+        {"minutes_after_start": 275, "delta": -15, "note": "minor adjustment draw"},
+        {"minutes_after_start": 305, "delta": 30, "note": "expedited partial receipt arrives"},
+        {"minutes_after_start": 335, "delta": -40, "note": "Chassis line draw, shift handover, still critical"}
+      ]
+    },
+    {
+      "sku": "TWH-310",
+      "name": "Transmission Wiring Harness",
+      "opening_balance": 500,
+      "run_rate_per_minute": 4.5,
+      "events": [
+        {"minutes_after_start": 15, "delta": -40, "note": "Transmission line night shift draw"},
+        {"minutes_after_start": 45, "delta": -30, "note": "Transmission line continues steady production"},
+        {"minutes_after_start": 80, "delta": 20, "note": "small receipt, partial lot"},
+        {"minutes_after_start": 115, "delta": -50, "note": "Transmission line second draw"},
+        {"minutes_after_start": 150, "delta": -35, "note": "quality sample pulled for routine audit"},
+        {"minutes_after_start": 185, "delta": 25, "note": "scheduled supplier receipt arrives"},
+        {"minutes_after_start": 220, "delta": -45, "note": "Transmission line draw continues"},
+        {"minutes_after_start": 255, "delta": -20, "note": "minor rework draw"},
+        {"minutes_after_start": 290, "delta": 30, "note": "partial receipt from secondary supplier"},
+        {"minutes_after_start": 325, "delta": -25, "note": "Transmission line routine draw"},
+        {"minutes_after_start": 360, "delta": -15, "note": "minor adjustment draw"},
+        {"minutes_after_start": 395, "delta": -20, "note": "Transmission line draw, shift handover"}
+      ]
+    },
+    {
+      "sku": "HWH-150",
+      "name": "Headlamp Wiring Harness",
+      "opening_balance": 180,
+      "run_rate_per_minute": 2.5,
+      "events": [
+        {"minutes_after_start": 10, "delta": -20, "note": "Headlamp line night shift draw"},
+        {"minutes_after_start": 35, "delta": -15, "note": "Headlamp line continues drawing down"},
+        {"minutes_after_start": 65, "delta": 30, "note": "expedited partial receipt arrives ahead of schedule"},
+        {"minutes_after_start": 95, "delta": -10, "note": "Headlamp line routine draw"},
+        {"minutes_after_start": 125, "delta": -8, "note": "minor rework draw"},
+        {"minutes_after_start": 155, "delta": 15, "note": "small receipt, partial lot"},
+        {"minutes_after_start": 185, "delta": -12, "note": "Headlamp line draw continues"},
+        {"minutes_after_start": 215, "delta": -5, "note": "negligible adjustment draw"},
+        {"minutes_after_start": 245, "delta": 10, "note": "small miscellaneous receipt"},
+        {"minutes_after_start": 275, "delta": -8, "note": "Headlamp line routine draw"},
+        {"minutes_after_start": 305, "delta": -5, "note": "minor adjustment draw"},
+        {"minutes_after_start": 335, "delta": 8, "note": "Headlamp line draw, shift handover"}
+      ]
+    }
+  ]
+}

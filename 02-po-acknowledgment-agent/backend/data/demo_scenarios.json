@@ -1,0 +1,129 @@
+{
+  "clean_confirmation": {
+    "po_number": "VAC-PO-10231",
+    "supplier": "Deccan Fasteners",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-20",
+    "hours_since_po": 20,
+    "inbox": [
+      {
+        "thread_id": "VAC-INV-2025-0099",
+        "po_reference": "VAC-PO-10231",
+        "supplier": "Deccan Fasteners",
+        "body": "Confirming PO VAC-PO-10231 -- 500 units, delivery 2026-10-20 as ordered. Thanks.",
+        "attachment": null,
+        "received_at_hours": 18
+      }
+    ]
+  },
+  "chase_needed": {
+    "po_number": "VAC-PO-10247",
+    "supplier": "Konkan Metal Works",
+    "ordered_qty": 1200,
+    "ordered_date": "2026-10-22",
+    "hours_since_po": 50,
+    "inbox": []
+  },
+  "schedule_slip": {
+    "po_number": "VAC-PO-10259",
+    "supplier": "Satpura Components",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-20",
+    "hours_since_po": 10,
+    "inbox": [
+      {
+        "thread_id": "VAC-PO-10259",
+        "po_reference": "VAC-PO-10259",
+        "supplier": "Satpura Components",
+        "body": "Hi team, everything on our end is proceeding as usual, shop is running fine this week. One small update -- delivery now 2026-10-26 (was 2026-10-20), rest unchanged, 500 units as before. Regards.",
+        "attachment": null,
+        "received_at_hours": 9
+      }
+    ]
+  },
+  "ambiguous_reply": {
+    "po_number": "VAC-PO-10266",
+    "supplier": "Bharat Precision Forge",
+    "ordered_qty": 300,
+    "ordered_date": "2026-10-25",
+    "hours_since_po": 12,
+    "inbox": [
+      {
+        "thread_id": "VAC-PO-10266",
+        "po_reference": "VAC-PO-10266",
+        "supplier": "Bharat Precision Forge",
+        "body": "Noted, will advise.",
+        "attachment": null,
+        "received_at_hours": 11
+      }
+    ]
+  },
+  "exception_owner": {
+    "po_number": "VAC-PO-10271",
+    "supplier": "Bharat Precision Forge",
+    "ordered_qty": 400,
+    "ordered_date": "2026-10-28",
+    "hours_since_po": 14,
+    "inbox": [
+      {
+        "thread_id": "VAC-PO-10271",
+        "po_reference": "VAC-PO-10271",
+        "supplier": "Bharat Precision Forge",
+        "body": "Confirmed, will process as usual.",
+        "attachment": null,
+        "received_at_hours": 13
+      }
+    ]
+  },
+  "no_exception": {
+    "po_number": "VAC-PO-10272",
+    "supplier": "Girnar Components",
+    "ordered_qty": 400,
+    "ordered_date": "2026-10-28",
+    "hours_since_po": 14,
+    "inbox": [
+      {
+        "thread_id": "VAC-PO-10272",
+        "po_reference": "VAC-PO-10272",
+        "supplier": "Girnar Components",
+        "body": "Confirmed, will process as usual.",
+        "attachment": null,
+        "received_at_hours": 13
+      }
+    ]
+  },
+  "good_scan": {
+    "po_number": "VAC-PO-10280",
+    "supplier": "Matheran Precision Works",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-20",
+    "hours_since_po": 30,
+    "inbox": [
+      {
+        "thread_id": "VAC-PO-10280",
+        "po_reference": "VAC-PO-10280",
+        "supplier": "Matheran Precision Works",
+        "body": "Please see attached.",
+        "attachment": {"parsed_qty": 500, "parsed_date": "2026-10-20", "parse_confidence": 0.85},
+        "received_at_hours": 29
+      }
+    ]
+  },
+  "bad_scan": {
+    "po_number": "VAC-PO-10281",
+    "supplier": "Matheran Precision Works",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-21",
+    "hours_since_po": 30,
+    "inbox": [
+      {
+        "thread_id": "VAC-PO-10281",
+        "po_reference": "VAC-PO-10281",
+        "supplier": "Matheran Precision Works",
+        "body": "Please see attached.",
+        "attachment": {"parsed_qty": 500, "parsed_date": "2026-10-21", "parse_confidence": 0.45},
+        "received_at_hours": 29
+      }
+    ]
+  }
+}

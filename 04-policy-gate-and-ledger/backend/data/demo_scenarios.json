@@ -1,0 +1,96 @@
+{
+  "story_today": "2026-08-15",
+  "scenario_1": {
+    "agent_id": "arjun-allocation-agent",
+    "action": {
+      "description": "Single-claim shortfall - Deccan Motors, 4200-series harness",
+      "inputs": {
+        "sku": "4200-series-harness",
+        "account": "Deccan Motors",
+        "competing_orders": 1,
+        "exposure_inr": 9500.0,
+        "requested_units": 30,
+        "available_units": 30
+      },
+      "model_version": "allocation-model v1.3",
+      "reasoning_path": [
+        {"factor": "competing_orders", "weight": 0.5, "value": 1, "note": "at or under the boundary's max of 1"},
+        {"factor": "exposure_inr", "weight": 0.5, "value": 9500.0, "note": "at or under the boundary's max of Rs.25,000"}
+      ]
+    }
+  },
+  "scenario_2": {
+    "agent_id": "arjun-allocation-agent",
+    "action": {
+      "description": "Two-way shortfall - Continental Fasteners vs Shivaji Precision, same harness batch",
+      "inputs": {
+        "sku": "4200-series-harness",
+        "account": "Continental Fasteners",
+        "competing_orders": 2,
+        "exposure_inr": 42000.0,
+        "requested_units": 175,
+        "available_units": 120
+      },
+      "model_version": "allocation-model v1.3",
+      "reasoning_path": [
+        {"factor": "competing_orders", "weight": 0.5, "value": 2, "note": "exceeds the boundary's max of 1 competing order"},
+        {"factor": "exposure_inr", "weight": 0.5, "value": 42000.0, "note": "exceeds the boundary's max of Rs.25,000"}
+      ]
+    }
+  },
+  "scenario_3": {
+    "proposal": {
+      "agent_id": "arjun-allocation-agent",
+      "proposer": "Arjun",
+      "approver": "Suresh Rane",
+      "from_tier": 2,
+      "to_tier": 2,
+      "new_boundary": {
+        "max_competing_orders": 3,
+        "max_exposure_inr": 25000.0,
+        "notes": "medium-complexity: 2-3 competing orders, same exposure cap, still reversible"
+      },
+      "track_record_count": 130,
+      "track_record_minimum": 100,
+      "track_record_label": "clean decisions at the original boundary (4 months, no missed commitments)",
+      "reversal_trigger": {
+        "name": "widened-zone-reversal-trigger",
+        "metric": "missed_commitments_count",
+        "comparison": "gte",
+        "threshold": 1,
+        "window_label": "trailing 20 decisions at the widened boundary"
+      },
+      "re_review_date": "2026-11-15",
+      "rationale": "Widen the allocation agent from single-claim shortfalls to medium-complexity cases (2-3 competing orders), same exposure cap, same logging standard."
+    }
+  },
+  "scenario_4": {
+    "proposal": {
+      "agent_id": "arjun-allocation-agent",
+      "proposer": "Arjun",
+      "approver": "Suresh Rane",
+      "from_tier": 2,
+      "to_tier": 2,
+      "new_boundary": {
+        "max_competing_orders": 5,
+        "max_exposure_inr": 40000.0,
+        "notes": "a further widening, requested quickly after scenario 3 landed well"
+      },
+      "track_record_count": 12,
+      "track_record_minimum": 100,
+      "track_record_label": "clean decisions at the newly widened boundary (barely 3 weeks in)",
+      "reversal_trigger": null,
+      "re_review_date": "2026-12-01",
+      "rationale": "Scenario 3 landed cleanly; team wants to push further quickly."
+    }
+  },
+  "scenario_5": {
+    "agent_id": "arjun-allocation-agent",
+    "recent_decisions": [
+      {"missed_commitment": false, "escalated": false},
+      {"missed_commitment": false, "escalated": true},
+      {"missed_commitment": true, "escalated": false},
+      {"missed_commitment": false, "escalated": false}
+    ]
+  }
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "case_id": "C1",
+    "label": "Clean case — Tier 1 contract exposure genuinely dominant",
+    "orders": [
+      {
+        "account": "Account A (Tier 1)",
+        "requested_units": 100,
+        "contract_penalty_inr": 180000,
+        "downstream_impact_inr": 5000,
+        "strategic_score": 0.0,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 5000,
+        "note": "Large penalty clause, nothing else close."
+      },
+      {
+        "account": "Account B (Tier 2)",
+        "requested_units": 50,
+        "contract_penalty_inr": 0,
+        "downstream_impact_inr": 2000,
+        "strategic_score": 0.0,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 2000,
+        "note": "No contract, small everything."
+      }
+    ],
+    "ground_truth": "Account A (Tier 1)",
+    "note": "Single variable really is the whole story here — the rule should win, and does."
+  },
+  {
+    "case_id": "C2",
+    "label": "Clean case — Tier 1 clearly ahead on every factor",
+    "orders": [
+      {
+        "account": "Account A (Tier 1)",
+        "requested_units": 80,
+        "contract_penalty_inr": 120000,
+        "downstream_impact_inr": 8000,
+        "strategic_score": 0.2,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 6000,
+        "note": "Established, moderate everything, still ahead."
+      },
+      {
+        "account": "Account B (Tier 2)",
+        "requested_units": 40,
+        "contract_penalty_inr": 0,
+        "downstream_impact_inr": 5000,
+        "strategic_score": 0.1,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 3000,
+        "note": "Smaller on every factor."
+      }
+    ],
+    "ground_truth": "Account A (Tier 1)",
+    "note": "Another clean one — the rule gets lucky because there's no real competition here."
+  },
+  {
+    "case_id": "C3",
+    "label": "Clean case — Tier 1 dominant with moderate downstream exposure",
+    "orders": [
+      {
+        "account": "Account A (Tier 1)",
+        "requested_units": 90,
+        "contract_penalty_inr": 95000,
+        "downstream_impact_inr": 30000,
+        "strategic_score": 0.5,
+        "replenishment_confidence": 0.4,
+        "expedite_cost_inr": 25000,
+        "note": "Biggest number on every factor that matters."
+      },
+      {
+        "account": "Account B (Tier 2)",
+        "requested_units": 45,
+        "contract_penalty_inr": 0,
+        "downstream_impact_inr": 10000,
+        "strategic_score": 0.3,
+        "replenishment_confidence": 0.6,
+        "expedite_cost_inr": 8000,
+        "note": "Smaller downstream footprint, nothing dominant."
+      }
+    ],
+    "ground_truth": "Account A (Tier 1)",
+    "note": "A third clean case, varied numbers — the rule is right when Tier 1 truly is the whole answer."
+  },
+  {
+    "case_id": "C4",
+    "label": "Clean case — Tier 1 ahead despite a mild trajectory wobble",
+    "orders": [
+      {
+        "account": "Account A (Tier 1)",
+        "requested_units": 60,
+        "contract_penalty_inr": 130000,
+        "downstream_impact_inr": 12000,
+        "strategic_score": -0.2,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 9000,
+        "note": "Slightly cooling, still clearly ahead on exposure."
+      },
+      {
+        "account": "Account B (Tier 2)",
+        "requested_units": 30,
+        "contract_penalty_inr": 0,
+        "downstream_impact_inr": 9000,
+        "strategic_score": 0.4,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 4000,
+        "note": "Improving, but starting from too far behind to catch up."
+      }
+    ],
+    "ground_truth": "Account A (Tier 1)",
+    "note": "A small negative trajectory signal isn't enough to flip a clean case — that's the point of weighing, not a loophole."
+  },
+  {
+    "case_id": "C5",
+    "label": "Clean case — a second Tier-1-is-right scenario, for balance",
+    "orders": [
+      {
+        "account": "Account A (Tier 1)",
+        "requested_units": 70,
+        "contract_penalty_inr": 160000,
+        "downstream_impact_inr": 18000,
+        "strategic_score": 0.1,
+        "replenishment_confidence": 0.45,
+        "expedite_cost_inr": 12000,
+        "note": "Large penalty, average everything else."
+      },
+      {
+        "account": "Account B (Tier 2)",
+        "requested_units": 35,
+        "contract_penalty_inr": 0,
+        "downstream_impact_inr": 6000,
+        "strategic_score": 0.0,
+        "replenishment_confidence": 0.55,
+        "expedite_cost_inr": 3000,
+        "note": "Unremarkable on every factor."
+      }
+    ],
+    "ground_truth": "Account A (Tier 1)",
+    "note": "The rule is right about 50% of the time in this illustrative set, same as it was wrong about a third of the real 41."
+  },
+  {
+    "case_id": "C6",
+    "label": "Two-Tier-1 standoff #1 — the rule has no answer at all",
+    "orders": [
+      {
+        "account": "Account A (Tier 1)",
+        "requested_units": 65,
+        "contract_penalty_inr": 50000,
+        "downstream_impact_inr": 80000,
+        "strategic_score": 1.0,
+        "replenishment_confidence": 0.4,
+        "expedite_cost_inr": 30000,
+        "note": "Smaller penalty, much bigger downstream exposure, improving trajectory."
+      },
+      {
+        "account": "Account B (Tier 1)",
+        "requested_units": 65,
+        "contract_penalty_inr": 55000,
+        "downstream_impact_inr": 15000,
+        "strategic_score": -0.5,
+        "replenishment_confidence": 0.7,
+        "expedite_cost_inr": 10000,
+        "note": "Marginally bigger penalty, everything else weaker."
+      }
+    ],
+    "ground_truth": "Account A (Tier 1)",
+    "note": "Both sides are Tier 1 — the old rule just says 'both win,' which isn't an answer. The model doesn't need different tiers to compare them."
+  },
+  {
+    "case_id": "C7",
+    "label": "Two-Tier-1 standoff #2 — same problem, different numbers",
+    "orders": [
+      {
+        "account": "Account A (Tier 1)",
+        "requested_units": 55,
+        "contract_penalty_inr": 90000,
+        "downstream_impact_inr": 10000,
+        "strategic_score": -1.0,
+        "replenishment_confidence": 0.3,
+        "expedite_cost_inr": 5000,
+        "note": "Bigger penalty, but declining and hard to backstop later."
+      },
+      {
+        "account": "Account B (Tier 1)",
+        "requested_units": 55,
+        "contract_penalty_inr": 85000,
+        "downstream_impact_inr": 60000,
+        "strategic_score": 1.5,
+        "replenishment_confidence": 0.6,
+        "expedite_cost_inr": 40000,
+        "note": "Slightly smaller penalty, far bigger downstream impact, improving fast."
+      }
+    ],
+    "ground_truth": "Account B (Tier 1)",
+    "note": "Another standoff the tier rule can't touch — the model resolves it on downstream impact and trajectory instead."
+  },
+  {
+    "case_id": "C8",
+    "label": "A Tier 1 account quietly declining vs. a growing Tier 2",
+    "orders": [
+      {
+        "account": "Account A (Tier 1)",
+        "requested_units": 60,
+        "contract_penalty_inr": 70000,
+        "downstream_impact_inr": 20000,
+        "strategic_score": -1.5,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 20000,
+        "note": "Contract still active, but orders have been shrinking for two quarters."
+      },
+      {
+        "account": "Account B (Tier 2)",
+        "requested_units": 40,
+        "contract_penalty_inr": 0,
+        "downstream_impact_inr": 25000,
+        "strategic_score": 1.8,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 8000,
+        "note": "No contract yet, but growing fast and about to sign one."
+      }
+    ],
+    "ground_truth": "Account B (Tier 2)",
+    "note": "This is Rohit's actual example — protecting the Tier 1 label here turned out to be the wrong call."
+  },
+  {
+    "case_id": "C9",
+    "label": "Genuinely disputed close call — even the model doesn't resolve it cleanly",
+    "orders": [
+      {
+        "account": "Account A (Tier 1)",
+        "requested_units": 50,
+        "contract_penalty_inr": 60000,
+        "downstream_impact_inr": 40000,
+        "strategic_score": 0.6,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 20000,
+        "note": "Looks marginally stronger on paper."
+      },
+      {
+        "account": "Account B (Tier 1)",
+        "requested_units": 50,
+        "contract_penalty_inr": 58000,
+        "downstream_impact_inr": 38000,
+        "strategic_score": 0.5,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 19000,
+        "note": "Almost identical numbers — a real toss-up."
+      }
+    ],
+    "ground_truth": "Account B (Tier 1)",
+    "note": "Two reviewers on the historical panel disagreed about this one even after the fact. The weights, applied honestly, land on A by a 1.4-point margin — inside the close-call band the live system would escalate on, not autonomously decide."
+  },
+  {
+    "case_id": "C10",
+    "label": "Hidden-information miss — the model can't see what nobody logged",
+    "orders": [
+      {
+        "account": "Account A (Tier 2)",
+        "requested_units": 45,
+        "contract_penalty_inr": 20000,
+        "downstream_impact_inr": 35000,
+        "strategic_score": 0.4,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 10000,
+        "note": "Looks modest on paper; turned out, in hindsight, to deserve priority."
+      },
+      {
+        "account": "Account B (Tier 1)",
+        "requested_units": 55,
+        "contract_penalty_inr": 50000,
+        "downstream_impact_inr": 20000,
+        "strategic_score": 0.8,
+        "replenishment_confidence": 0.6,
+        "expedite_cost_inr": 15000,
+        "note": "Looks fine on every input the model has; was privately known to be cooling, never logged anywhere."
+      }
+    ],
+    "ground_truth": "Account A (Tier 2)",
+    "note": "This is the honest edge of what weighing can do: it reasons well over what it can see, and it can't see a relationship read nobody wrote down."
+  }
+]

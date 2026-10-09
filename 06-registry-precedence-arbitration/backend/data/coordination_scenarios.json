@@ -1,0 +1,90 @@
+{
+  "supplier": "Nashik Precision Fasteners",
+  "bolt_sku": "M8x40-hex-flange-bolt",
+  "claims": {
+    "pune_monday": {
+      "claim_id": "pune-mon-001",
+      "plant": "Pune",
+      "supplier": "Nashik Precision Fasteners",
+      "lot_id": "NPF-LOT-4471",
+      "sku": "M8x40-hex-flange-bolt",
+      "quantity_needed": 20000,
+      "commitment_tier": 2,
+      "days_of_cover": 1.5,
+      "requested_at": 100.0,
+      "requested_at_display": "14:02"
+    },
+    "plant_two_monday": {
+      "claim_id": "plant2-mon-001",
+      "plant": "Plant Two",
+      "supplier": "Nashik Precision Fasteners",
+      "lot_id": "NPF-LOT-4471",
+      "sku": "M8x40-hex-flange-bolt",
+      "quantity_needed": 15000,
+      "commitment_tier": 2,
+      "days_of_cover": 0.8,
+      "requested_at": 104.0,
+      "requested_at_display": "14:06"
+    },
+    "pune_later": {
+      "claim_id": "pune-wk3-001",
+      "plant": "Pune",
+      "supplier": "Nashik Precision Fasteners",
+      "lot_id": "NPF-LOT-4518",
+      "sku": "M8x40-hex-flange-bolt",
+      "quantity_needed": 22000,
+      "commitment_tier": 1,
+      "days_of_cover": 2.0,
+      "requested_at": 200.0,
+      "requested_at_display": "09:14"
+    },
+    "plant_four_later": {
+      "claim_id": "plant4-wk3-001",
+      "plant": "Plant Four",
+      "supplier": "Nashik Precision Fasteners",
+      "lot_id": "NPF-LOT-4518",
+      "sku": "M8x40-hex-flange-bolt",
+      "quantity_needed": 9000,
+      "commitment_tier": 2,
+      "days_of_cover": 0.5,
+      "requested_at": 203.0,
+      "requested_at_display": "09:17"
+    },
+    "plant_three_claim": {
+      "claim_id": "plant3-001",
+      "plant": "Plant Three",
+      "supplier": "Igatpuri Moulding Co.",
+      "lot_id": "IMC-LOT-2210",
+      "sku": "connector-housing-14p",
+      "quantity_needed": 6000,
+      "commitment_tier": 2,
+      "days_of_cover": 3.0,
+      "requested_at": 300.0,
+      "requested_at_display": "11:40"
+    },
+    "pune_tie": {
+      "claim_id": "pune-tie-001",
+      "plant": "Pune",
+      "supplier": "Nashik Precision Fasteners",
+      "lot_id": "NPF-LOT-4555",
+      "sku": "M8x40-hex-flange-bolt",
+      "quantity_needed": 10000,
+      "commitment_tier": 2,
+      "days_of_cover": 1.2,
+      "requested_at": 400.0,
+      "requested_at_display": "16:00"
+    },
+    "plant_two_tie": {
+      "claim_id": "plant2-tie-001",
+      "plant": "Plant Two",
+      "supplier": "Nashik Precision Fasteners",
+      "lot_id": "NPF-LOT-4555",
+      "sku": "M8x40-hex-flange-bolt",
+      "quantity_needed": 10000,
+      "commitment_tier": 2,
+      "days_of_cover": 1.2,
+      "requested_at": 400.0,
+      "requested_at_display": "16:00"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "sku_family": "fastener_family_F12",
+  "supplier": {
+    "supplier": "Supplier S-9",
+    "open_capacity": 200
+  },
+  "site_positions": {
+    "pune_surplus": {
+      "site": "Pune",
+      "on_hand": 620,
+      "buffer_target": 400,
+      "_comment": "Scenario 1 & 3 — Pune sitting on real surplus."
+    },
+    "nashik_short": {
+      "site": "Nashik",
+      "on_hand": 130,
+      "buffer_target": 300,
+      "_comment": "Scenario 1 & 3 — Nashik genuinely short, six weeks running."
+    },
+    "nashik_comfortable": {
+      "site": "Nashik",
+      "on_hand": 310,
+      "buffer_target": 300,
+      "_comment": "Scenario 2 — Nashik comfortably within its own buffer target this cycle."
+    }
+  }
+}

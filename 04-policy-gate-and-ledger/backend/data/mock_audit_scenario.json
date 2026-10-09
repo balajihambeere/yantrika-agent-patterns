@@ -1,0 +1,55 @@
+{
+  "audit_today": "2026-09-20",
+  "weeks_ago": 11,
+  "old_decision": {
+    "inputs": {
+      "sku": "4200-series-harness",
+      "account": "Orbit Drivetrain",
+      "competing_orders": 1,
+      "exposure_inr": 14200.0,
+      "requested_units": 60,
+      "available_units": 60
+    },
+    "model_version": "allocation-model v1.2",
+    "reasoning_path": [
+      {"factor": "competing_orders", "weight": 0.5, "value": 1,
+       "note": "single claim, at or under the policy-v1 boundary's max of 1"},
+      {"factor": "exposure_inr", "weight": 0.5, "value": 14200.0,
+       "note": "at or under the policy-v1 boundary's max of Rs.25,000"}
+    ]
+  },
+  "policy_change_proposal": {
+    "agent_id": "arjun-allocation-agent",
+    "proposer": "Arjun",
+    "approver": "Suresh Rane",
+    "from_tier": 2,
+    "to_tier": 2,
+    "new_boundary": {
+      "max_competing_orders": 3,
+      "max_exposure_inr": 25000.0,
+      "notes": "medium-complexity: 2-3 competing orders, same exposure cap"
+    },
+    "track_record_count": 130,
+    "track_record_minimum": 100,
+    "track_record_label": "clean decisions at the original boundary",
+    "reversal_trigger": {
+      "name": "widened-zone-reversal-trigger",
+      "metric": "missed_commitments_count",
+      "comparison": "gte",
+      "threshold": 1,
+      "window_label": "trailing 20 decisions at the widened boundary"
+    },
+    "re_review_date": "2026-11-15",
+    "rationale": "A tier-boundary widening - already validated and signed off elsewhere; applied here directly.",
+    "approved_by": "Suresh Rane"
+  },
+  "outcome": {
+    "result": "shipped_complete",
+    "missed_commitment": false,
+    "units_shipped": 60,
+    "recorded_by": "Vikram"
+  },
+  "tamper": {
+    "exposure_inr": 999999.0
+  }
+}

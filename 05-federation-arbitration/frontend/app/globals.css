@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens for the federation-arbitration demo UI — same palette as
+ * the agentic-loop demo. Light values live on :root; dark values are
+ * re-declared under the prefers-color-scheme media query only (no manual
+ * theme toggle — Tailwind v4's `dark:` variant is prefers-color-scheme-
+ * driven by default).
+ */
+:root {
+  --color-bg: #f7f5ee;
+  --color-ink: #1f2d3d;
+  --color-soft: #5a6b7a;
+  --color-panel: #ffffff;
+  --color-border: #c9c2a8;
+
+  --color-accent: #a24f25;
+  --color-safe: #2f4a3a;
+  --color-danger: #b8372e;
+  --color-on-accent: #ffffff;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #121826;
+    --color-ink: #e9e4d6;
+    --color-soft: #a9b7c4;
+    --color-panel: #1a2234;
+    --color-border: #33415a;
+
+    --color-accent: #e08a4b;
+    --color-safe: #6fae8c;
+    --color-danger: #e0665c;
+    --color-on-accent: #1f2d3d;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-ink: var(--color-ink);
+  --color-soft: var(--color-soft);
+  --color-panel: var(--color-panel);
+  --color-border: var(--color-border);
+  --color-accent: var(--color-accent);
+  --color-safe: var(--color-safe);
+  --color-danger: var(--color-danger);
+  --color-on-accent: var(--color-on-accent);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+}

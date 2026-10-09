@@ -1,0 +1,90 @@
+[
+  {
+    "label": "Cycle 1 — routine replenishment, low stakes",
+    "available_units": 35,
+    "orders": [
+      {
+        "account": "Deccan Motors",
+        "requested_units": 30,
+        "contract_penalty_inr": 40000,
+        "downstream_impact_inr": 15000,
+        "strategic_score": 0.5,
+        "replenishment_confidence": 0.6,
+        "expedite_cost_inr": 10000,
+        "note": "Steady repeat order, routine contract terms."
+      },
+      {
+        "account": "Satpura Components",
+        "requested_units": 10,
+        "contract_penalty_inr": 0,
+        "downstream_impact_inr": 2000,
+        "strategic_score": -0.5,
+        "replenishment_confidence": 0.9,
+        "expedite_cost_inr": 1000,
+        "note": "Small trial account; next batch is a near-certainty."
+      }
+    ]
+  },
+  {
+    "label": "Cycle 2 — the three-way harness-batch conflict",
+    "available_units": 540,
+    "orders": [
+      {
+        "account": "Bosch",
+        "requested_units": 400,
+        "contract_penalty_inr": 180000,
+        "downstream_impact_inr": 60000,
+        "strategic_score": 1.0,
+        "replenishment_confidence": 0.3,
+        "expedite_cost_inr": 70000,
+        "note": "Regular contracted shipment; penalty clause in force."
+      },
+      {
+        "account": "Continental Fasteners",
+        "requested_units": 175,
+        "contract_penalty_inr": 15000,
+        "downstream_impact_inr": 40000,
+        "strategic_score": 1.4,
+        "replenishment_confidence": 0.55,
+        "expedite_cost_inr": 20000,
+        "note": "Second order, three weeks into a still-fragile relationship."
+      },
+      {
+        "account": "Shivaji Precision Works",
+        "requested_units": 120,
+        "contract_penalty_inr": 8000,
+        "downstream_impact_inr": 25000,
+        "strategic_score": -0.8,
+        "replenishment_confidence": 0.85,
+        "expedite_cost_inr": 12000,
+        "note": "Already slipped once this quarter; next-day replenishment is a near-certainty."
+      }
+    ]
+  },
+  {
+    "label": "Cycle 3 — the divergence: a shutdown nobody told the model about",
+    "available_units": 200,
+    "orders": [
+      {
+        "account": "Konkan Precision",
+        "requested_units": 200,
+        "contract_penalty_inr": 150000,
+        "downstream_impact_inr": 50000,
+        "strategic_score": 0.8,
+        "replenishment_confidence": 0.4,
+        "expedite_cost_inr": 60000,
+        "note": "Contracted account; weighted factors flag it urgent — but the model has no input field for plant shutdown schedules."
+      },
+      {
+        "account": "Orbit Drivetrain",
+        "requested_units": 150,
+        "contract_penalty_inr": 20000,
+        "downstream_impact_inr": 90000,
+        "strategic_score": 1.2,
+        "replenishment_confidence": 0.5,
+        "expedite_cost_inr": 15000,
+        "note": "Growing relationship; its shortfall would hit a bigger customer's overflow line."
+      }
+    ]
+  }
+]

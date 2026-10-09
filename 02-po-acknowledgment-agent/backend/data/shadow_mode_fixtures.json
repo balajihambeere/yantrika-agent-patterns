@@ -1,0 +1,147 @@
+[
+  {
+    "label": "clean confirmation, exact match",
+    "category": "baseline",
+    "po_number": "SH-1001",
+    "supplier": "Deccan Fasteners",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-20",
+    "ground_truth_action": "log_only",
+    "message": {"body": "Confirming PO SH-1001 -- 500 units, delivery 2026-10-20 as ordered.", "attachment": null},
+    "hours_since_po": 20
+  },
+  {
+    "label": "48h, nothing logged",
+    "category": "baseline",
+    "po_number": "SH-1002",
+    "supplier": "Konkan Metal Works",
+    "ordered_qty": 1200,
+    "ordered_date": "2026-10-22",
+    "ground_truth_action": "send_chase",
+    "message": null,
+    "hours_since_po": 52
+  },
+  {
+    "label": "clean confirmation, second supplier",
+    "category": "baseline",
+    "po_number": "SH-1003",
+    "supplier": "Girnar Components",
+    "ordered_qty": 220,
+    "ordered_date": "2026-11-01",
+    "ground_truth_action": "log_only",
+    "message": {"body": "Confirming PO SH-1003 -- 220 units, delivery 2026-11-01, all good.", "attachment": null},
+    "hours_since_po": 20
+  },
+  {
+    "label": "48h, second supplier",
+    "category": "baseline",
+    "po_number": "SH-1004",
+    "supplier": "Wai Industrial Supplies",
+    "ordered_qty": 80,
+    "ordered_date": "2026-10-19",
+    "ground_truth_action": "send_chase",
+    "message": null,
+    "hours_since_po": 60
+  },
+  {
+    "label": "genuinely unclear, no pattern matches",
+    "category": "baseline",
+    "po_number": "SH-1005",
+    "supplier": "Bharat Precision Forge",
+    "ordered_qty": 300,
+    "ordered_date": "2026-10-25",
+    "ground_truth_action": "escalate_unclear",
+    "message": {"body": "Will check and get back to you.", "attachment": null},
+    "hours_since_po": 20
+  },
+  {
+    "label": "clean confirmation, no slip this time",
+    "category": "baseline",
+    "po_number": "SH-1006",
+    "supplier": "Satpura Components",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-20",
+    "ground_truth_action": "log_only",
+    "message": {"body": "Confirming PO SH-1006 -- 500 units, delivery 2026-10-20, no changes.", "attachment": null},
+    "hours_since_po": 20
+  },
+  {
+    "label": "stamped-PDF confirmation, good scan (was: misread as no-reply)",
+    "category": "historical-failure-now-closed [guardrail 1: attachment confidence]",
+    "po_number": "SH-2001",
+    "supplier": "Matheran Precision Works",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-20",
+    "ground_truth_action": "log_only",
+    "message": {
+      "body": "Please see attached.",
+      "attachment": {"parsed_qty": 500, "parsed_date": "2026-10-20", "parse_confidence": 0.85}
+    },
+    "hours_since_po": 20
+  },
+  {
+    "label": "\"noted, will advise\" (was: misread as a clear confirmation)",
+    "category": "historical-failure-now-closed [non-committal phrase detection]",
+    "po_number": "SH-2002",
+    "supplier": "Bharat Precision Forge",
+    "ordered_qty": 300,
+    "ordered_date": "2026-10-25",
+    "ground_truth_action": "escalate_unclear",
+    "message": {"body": "Noted, will advise.", "attachment": null},
+    "hours_since_po": 20
+  },
+  {
+    "label": "6-day schedule slip, buried in routine text (was: misread as clean)",
+    "category": "historical-failure-now-closed [guardrail 4: hard invariant]",
+    "po_number": "SH-2003",
+    "supplier": "Satpura Components",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-20",
+    "ground_truth_action": "escalate_mismatch",
+    "message": {
+      "body": "Hi team, everything proceeding as usual this week. One small update -- delivery now 2026-10-26 (was 2026-10-20), 500 units as before.",
+      "attachment": null
+    },
+    "hours_since_po": 20
+  },
+  {
+    "label": "reply that arrived on an old invoice thread, once it's been found",
+    "category": "historical-failure-now-closed [guardrail 2: reference-number matching -- the matching itself happens in trigger(), out of scope for this script; see demo.py's clean_confirmation() for the end-to-end fix]",
+    "po_number": "SH-2004",
+    "supplier": "Deccan Fasteners",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-20",
+    "ground_truth_action": "log_only",
+    "message": {
+      "thread_id": "SH-INV-OLD",
+      "body": "Confirming PO SH-2004 -- 500 units, delivery 2026-10-20.",
+      "attachment": null
+    },
+    "hours_since_po": 20
+  },
+  {
+    "label": "negation blind spot: \"not confirmed yet\"",
+    "category": "new-edge-case [negation handling -- not yet built]",
+    "po_number": "SH-3001",
+    "supplier": "Girnar Components",
+    "ordered_qty": 220,
+    "ordered_date": "2026-11-01",
+    "ground_truth_action": "escalate_unclear",
+    "message": {"body": "Not confirmed yet, still checking with our workshop.", "attachment": null},
+    "hours_since_po": 20
+  },
+  {
+    "label": "body text overrides attachment, but attachment wins silently",
+    "category": "new-edge-case [body-vs-attachment cross-check -- not yet built]",
+    "po_number": "SH-3002",
+    "supplier": "Wai Industrial Supplies",
+    "ordered_qty": 500,
+    "ordered_date": "2026-10-20",
+    "ground_truth_action": "escalate_mismatch",
+    "message": {
+      "body": "Revised: please note quantity is now 450 units, see attached for date confirmation.",
+      "attachment": {"parsed_qty": 500, "parsed_date": "2026-10-20", "parse_confidence": 0.9}
+    },
+    "hours_since_po": 20
+  }
+]
