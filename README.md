@@ -1,6 +1,6 @@
 # Yantrika Agent Patterns
 
-Six small, runnable [LangGraph](https://github.com/langchain-ai/langgraph) implementations of common agentic-system design patterns — each one a self-contained example with its own `demo.py`, test suite, and scripted sample data (no LLM calls, no API key required; every decision is deterministic and rule-based so the examples are reproducible).
+Six small, runnable [LangGraph](https://github.com/langchain-ai/langgraph) implementations of common agentic-system design patterns, set in the **manufacturing ERP domain** — PO acknowledgment, material allocation, multi-plant arbitration, and shared lot registries — each one a self-contained example with its own `demo.py`, test suite, and scripted sample data (no LLM calls, no API key required; every decision is deterministic and rule-based so the examples are reproducible).
 
 | # | Example | Pattern |
 |---|---|---|
