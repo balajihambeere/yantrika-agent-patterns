@@ -18,15 +18,16 @@
     </header>`}function g(){return`
     <section id="top" class="mx-auto max-w-4xl px-5 pb-16 pt-20 text-center sm:px-8 sm:pb-24 sm:pt-28">
       <p class="mb-5 font-mono text-base uppercase tracking-[0.2em] text-accent">
-        Six LangGraph patterns, built and verified end to end
+        Six LangGraph patterns for the manufacturing ERP domain
       </p>
       <h1 class="text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
         When should an agent act alone —
         <span class="text-accent">and when should it stop and ask?</span>
       </h1>
       <p class="mx-auto mt-6 max-w-2xl text-balance text-lg leading-relaxed text-soft">
-        Six working, full-stack demos — FastAPI + LangGraph backends, Next.js frontends,
-        each with a real server-side <code class="font-mono text-ink">interrupt()</code>
+        Six working, full-stack demos grounded in real manufacturing ERP workflows —
+        PO acknowledgment, material allocation, cross-plant arbitration, shared lot
+        registries — each with a real server-side <code class="font-mono text-ink">interrupt()</code>
         that genuinely pauses for a human, not a loading-spinner impression of one.
       </p>
 
