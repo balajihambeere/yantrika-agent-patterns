@@ -102,7 +102,9 @@
         <p class="text-base text-soft">
           Six original, independently-verified LangGraph implementations.
           No LLM calls in any core decision loop — every <code class="font-mono">decide()</code>
-          is deterministic and reproducible.
+          is deterministic and reproducible. Each demo also ships an optional
+          OpenAI-powered chat panel for asking questions about the running scenario,
+          tested against a real API key and kept entirely outside the decision path.
         </p>
         <a
           href="${c}"

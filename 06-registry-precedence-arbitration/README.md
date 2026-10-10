@@ -69,7 +69,7 @@ python3 -m unittest test_coordination_graph.py -v
 | `demo.py` | Drives all four cases above, streaming the graph via `stream_mode="updates"` and printing each node's output as it fires, in true chronological order, resuming the one interrupt case with `Command(resume=...)`. The scripted claims it replays are loaded at runtime from `data/coordination_scenarios.json`. |
 | `data/coordination_scenarios.json` | The scripted sample data for the demo: the supplier name, SKU, and the full set of claims (plant, lot, commitment tier, days-of-cover, timestamp) used across the four cases in `demo.py`, kept as data rather than hardcoded in the script. |
 | `test_coordination_graph.py` | Unit tests: commitment-tier-only resolution, tied-tier-resolved-by-cover, tied-tier-and-cover-resolved-by-timestamp, a losing claim's specific alternate-cover suggestion, a non-colliding claim granting with no arbitration and no interrupt, a genuine tie escalating via `interrupt()`, and a 3-plant scenario where only two of three claims actually collide. |
-| `requirements.txt` | Just `langgraph`. Nothing else — the rulebook and registry are deliberately rule-based, not an LLM call, so the demo is deterministic and needs no API key. |
+| `requirements.txt` | Just `langgraph`. Nothing else — the rulebook and registry are deliberately rule-based, not an LLM call, so the demo is deterministic and needs no API key. (The full-stack demo's `backend/main.py` separately exposes an optional `/api/chat` panel that calls OpenAI when `OPENAI_API_KEY` is set — tested against a real key — but it sits outside the rulebook/registry entirely.) |
 
 ## Why LangGraph, and why `arbitrate()` isn't an LLM call
 

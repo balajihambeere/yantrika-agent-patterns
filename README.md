@@ -1,6 +1,6 @@
 # Yantrika Agent Patterns
 
-Six small, runnable [LangGraph](https://github.com/langchain-ai/langgraph) implementations of common agentic-system design patterns, set in the **manufacturing ERP domain** — PO acknowledgment, material allocation, multi-plant arbitration, and shared lot registries — each one a self-contained example with its own `demo.py`, test suite, and scripted sample data (no LLM calls, no API key required; every decision is deterministic and rule-based so the examples are reproducible).
+Six small, runnable [LangGraph](https://github.com/langchain-ai/langgraph) implementations of common agentic-system design patterns, set in the **manufacturing ERP domain** — PO acknowledgment, material allocation, multi-plant arbitration, and shared lot registries — each one a self-contained example with its own `demo.py`, test suite, and scripted sample data. The core `decide` / `weigh` / `perceive` logic in every example is deterministic, rule-based Python — no LLM calls, no API key required, fully reproducible. Each example's full-stack demo also ships an optional OpenAI-powered chat panel (`/api/chat`, tested against a real `OPENAI_API_KEY`) for asking questions about the running scenario — it gracefully degrades to a static message if no key is set, and it never sits in the decision path.
 
 | # | Example | Pattern |
 |---|---|---|
@@ -27,7 +27,7 @@ Some examples have an extra script worth running too — `02-po-acknowledgment-a
 
 ## Design notes that hold across all six
 
-- **No LLM calls anywhere.** Every `decide` / `weigh` / `perceive` step is plain, deterministic Python — threshold logic, weighted scoring, or rule lookups. The point of each example is the *orchestration shape* (the graph), not a model's judgment, so nothing here needs an API key and every run is reproducible.
+- **No LLM calls in the core decision loop.** Every `decide` / `weigh` / `perceive` step is plain, deterministic Python — threshold logic, weighted scoring, or rule lookups. The point of each example is the *orchestration shape* (the graph), not a model's judgment, so the graph itself needs no API key and every run is reproducible. The full-stack demo around each graph does add one optional, out-of-band OpenAI call — a `/api/chat` Q&A panel for the running scenario — which has been exercised against a real `OPENAI_API_KEY`, degrades gracefully without one, and never feeds back into `decide` / `weigh` / `perceive`.
 - **`interrupt()` is a real pause, not a callback.** Wherever a human needs to sign off, the graph genuinely suspends via LangGraph's `interrupt()` and resumes only via `Command(resume=...)` — the same mechanism a real review UI would drive.
 - **Sample data lives in `data/*.json`**, loaded at runtime, kept separate from the graph/business logic in each example.
 - **Streamed output is chronological.** Each `demo.py` prints node output via `graph.stream(..., stream_mode="updates")` as each node actually fires, rather than batch-reading state after the fact.

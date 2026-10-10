@@ -98,7 +98,7 @@ python3 -m unittest test_reasoning_graph.py -v
 | `test_reasoning_graph.py` | Unit tests: a clear-agreement/low-exposure case that allocates with no interrupt, a close call that escalates even at zero exposure, a high-exposure case that escalates even when factors clearly agree, a log entry that retains the actual per-factor weights/scores (not just the allocation), and a human-override case where the final decision diverges from the system's own recommendation. Its fixtures are inline and self-contained — deliberately not loaded from `data/`. |
 | `data/sensing_cycles.json` | The three scripted sensing cycles `demo.py` streams through the graph (low-stakes case, Bosch/mid-tier/Continental three-way conflict, plant-shutdown divergence), loaded at runtime instead of being inlined in `demo.py`. |
 | `data/backtest_cases.json` | The 10 scripted illustrative shortfall cases `backtest.py` scores (clean single-factor cases, two-Tier-1 standoffs, and the two genuinely hard misses), loaded at runtime instead of being inlined in `backtest.py`. |
-| `requirements.txt` | Just `langgraph`. Nothing else — `weigh()`/`recommend()` are deliberately rule-based, not an LLM call, so the demo is deterministic and needs no API key. |
+| `requirements.txt` | Just `langgraph`. Nothing else — `weigh()`/`recommend()` are deliberately rule-based, not an LLM call, so the demo is deterministic and needs no API key. (The full-stack demo's `backend/main.py` separately exposes an optional `/api/chat` panel that calls OpenAI when `OPENAI_API_KEY` is set — tested against a real key — but it sits outside `weigh`/`recommend` entirely.) |
 
 ## Why this is a loop with no finish line, not a bounded task
 
